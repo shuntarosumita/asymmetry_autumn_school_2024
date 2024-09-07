@@ -142,7 +142,7 @@ end
 function solve_MF_equation!(p::Parameters, mf::MeanField)
     # パラメータの初期値セット
     ## 有限の秩序変数を「種」として入れておく
-    mf.m = 0.1; m_old::Float64 = 0.0
+    mf.m = 1e-6; m_old::Float64 = 0.0
     set_μ!(k -> define_H_MF(k, p, mf), p, mf)
 
     # 平均場解を求めるためのループ
@@ -267,7 +267,7 @@ let
     t2 = 0.0
     U = 2.0
     T = 0.01
-    nk1, nk2, nk3 = 64, 64, 1
+    nk1, nk2, nk3 = 24, 24, 1
     p = Parameters(system, nsub, ndeg, t1, t2, U, T, nk1, nk2, nk3)
 
     n_fill = 1.0
@@ -348,7 +348,7 @@ let
     t2 = 0.15
     U = 2.0
     T = 0.01
-    nk1, nk2, nk3 = 64, 64, 1
+    nk1, nk2, nk3 = 24, 24, 1
     p = Parameters(system, nsub, ndeg, t1, t2, U, T, nk1, nk2, nk3)
 
     n_fill = 1.0
